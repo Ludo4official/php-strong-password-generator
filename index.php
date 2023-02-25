@@ -1,18 +1,6 @@
 <?php
 
-$letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£%&abcdefghijklmnopqrstuvwxyz';
-
-$password = '';
-
-if (isset($_GET['length'])) {
-    $passwordlength = intval($_GET['length']);
-    for ( $i = 0; $i < $passwordlength; $i++ ) { 
-       $randomNumber = rand(0, strlen($letters) - 1);
-       $password .= $letters[$randomNumber];
-    }
-}
-
-
+include __DIR__ . '/functions.php';
 
 ?>
 
@@ -49,6 +37,7 @@ if (isset($_GET['length'])) {
                         <button type="submit">Genera</button>
 
                         <h1>
+                            Ecco la tua mega Password: 
                             <?php
                                 echo $password;
                             ?>
